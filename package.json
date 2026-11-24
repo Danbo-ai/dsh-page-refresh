@@ -1,0 +1,41 @@
+{
+  "name": "dsh-page-refresh",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "用快捷键刷新 DSH 前端页面（F5 / Ctrl+R），不新增按钮，也不需要重启进程。",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "dsh": ">=0.2.2-rc.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "dsh-client-modules"
+      ]
+    }
+  },
+  "license": "MIT",
+  "author": "Danbo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Danbo-ai/dsh-page-refresh.git"
+  },
+  "homepage": "https://github.com/Danbo-ai/dsh-page-refresh#readme",
+  "bugs": {
+    "url": "https://github.com/Danbo-ai/dsh-page-refresh/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness"
+  ]
+}
